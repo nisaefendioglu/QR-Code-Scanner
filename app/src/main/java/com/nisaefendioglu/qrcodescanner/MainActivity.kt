@@ -16,12 +16,19 @@ import androidx.camera.core.ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import com.nisaefendioglu.qrcodescanner.ui.theme.QRCodeScannerTheme
@@ -61,6 +68,10 @@ class MainActivity : ComponentActivity() {
                 }
                 Column(
                     modifier = Modifier.fillMaxSize()
+                        .background(Color(0xFFAED581))
+                        .padding(50.dp),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     if (hasCamPermission) {
                         if (hasReadCode) {
@@ -100,7 +111,7 @@ class MainActivity : ComponentActivity() {
                                     }
                                     previewView
                                 },
-                                modifier = Modifier.fillMaxSize()
+                                modifier = Modifier.border(10.dp, color = Color(0xFF32FF7E))
                             )
                         }
                     }
