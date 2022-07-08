@@ -68,8 +68,7 @@ class MainActivity : ComponentActivity() {
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .background(Color(0xff40407a))
-                        .padding(50.dp),
+                        .background(Color(0xff40407a)),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
