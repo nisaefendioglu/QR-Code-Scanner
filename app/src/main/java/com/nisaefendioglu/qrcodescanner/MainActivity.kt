@@ -1,12 +1,17 @@
 package com.nisaefendioglu.qrcodescanner
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Size
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.activity.ComponentActivity
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.OnBackPressedDispatcher
+import androidx.activity.compose.BackHandler
+import androidx.activity.compose.LocalOnBackPressedDispatcherOwner
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
@@ -31,6 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import com.nisaefendioglu.qrcodescanner.ui.theme.QRCodeScannerTheme
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,6 +81,9 @@ class MainActivity : ComponentActivity() {
                     if (hasCamPermission) {
                         if (hasReadCode) {
                             LoadWebUrl(code)
+                            BackHandler {
+                                restartApp()
+                            }
                         } else {
                             AndroidView(
                                 factory = { context ->
@@ -134,6 +143,37 @@ class MainActivity : ComponentActivity() {
                 loadUrl(url)
             }
         })
+    }
+
+    @Composable
+    fun BackPressHandler(
+        backPressedDispatcher: OnBackPressedDispatcher? =
+            LocalOnBackPressedDispatcherOwner.current?.onBackPressedDispatcher,
+        onBackPressed: () -> Unit
+    ) {
+        val currentOnBackPressed by rememberUpdatedState(newValue = onBackPressed)
+
+        val backCallback = remember {
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    currentOnBackPressed()
+                }
+            }
+        }
+
+        DisposableEffect(key1 = backPressedDispatcher) {
+            backPressedDispatcher?.addCallback(backCallback)
+
+            onDispose {
+                backCallback.remove()
+            }
+        }
+    }
+
+    private fun restartApp() {
+        val intent = Intent(this, MainActivity::class.java)
+        this.startActivity(intent)
+        finishAffinity()
     }
 
 }
