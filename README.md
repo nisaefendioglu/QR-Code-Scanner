@@ -8,7 +8,7 @@
 
 Screenshots of the app :
 
-<img width="575" alt="Screen Shot 2022-07-08 at 21 45 31" src="https://user-images.githubusercontent.com/48391281/178098816-c2eaf339-6ba7-484f-af19-9de6c3f95f0a.png">
+<img width="748" alt="Screen Shot 2022-07-10 at 20 25 28" src="https://user-images.githubusercontent.com/48391281/178155486-aaaf7975-c48d-4ea8-ac52-64cda5a26fdf.png">
 
 
 ## 🔨 Libraries Used in The Project :
