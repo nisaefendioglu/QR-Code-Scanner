@@ -1,8 +1,8 @@
-# QR-Code-Scanner
+# QR-Code-Scanner [![CodeFactor](https://www.codefactor.io/repository/github/nisaefendioglu/qr-code-scanner/badge)](https://www.codefactor.io/repository/github/nisaefendioglu/qr-code-scanner)
 
 - Scan your QR codes easily and quickly. ⭐️
 
-## Google Play Store :
+## Google Play Store : 
 
 [![Get it on Google Play](https://play.google.com/intl/en_us/badges/images/badge_new.png)](https://play.google.com/store/apps/details?id=com.nisaefendioglu.qrcodescanner)
 
