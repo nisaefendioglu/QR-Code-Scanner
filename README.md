@@ -1,4 +1,4 @@
-# QR-Code-Scanner [![CodeFactor](https://www.codefactor.io/repository/github/nisaefendioglu/qr-code-scanner/badge)](https://www.codefactor.io/repository/github/nisaefendioglu/qr-code-scanner)
+# QR-Code-Scanner [![CodeFactor](https://www.codefactor.io/repository/github/nisaefendioglu/qr-code-scanner/badge)](https://www.codefactor.io/repository/github/nisaefendioglu/qr-code-scanner) 
 
 - Scan your QR codes easily and quickly. ⭐️
 
@@ -27,7 +27,8 @@ Screenshots of the app :
 ```  
 ## Author
 
-- **[👩🏻‍💼 Nisa Efendioğlu](https://github.com/nisaefendioglu)**
+- **[👩🏻‍💼 Nisa Efendioğlu](https://github.com/nisaefendioglu)** - [Privacy Policy](https://pages.flycricket.io/qr-code-scanner-qr-1/privacy.html)
+
 
 ## License
 
